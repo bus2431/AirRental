@@ -1,12 +1,12 @@
-# PurifierRentalPJT
-21년 1차수 3조 개인과제
-# PurifierRentalProject (정수기렌탈 서비스 - 개인)
+# AirpurifierRentalPJT
+21년  개인과제
+# AirpurifierRentalProject (공기청정기렌탈 서비스 - 개인)
 
-3조 정수기 렌탈 신청 서비스 프로젝트 - 개인 과제 입니다.
+공기청정기 렌탈 신청 서비스 프로젝트 - 개인 과제 입니다.
 
 # Table of contents
 
-- [pirifierRentalProject (정수기 렌탈 신청 서비스)](#---)
+- [AirpurifierRentalProject (정수기 렌탈 신청 서비스)](#---)
   - [서비스 시나리오](#서비스-시나리오)
   - [체크포인트](#체크포인트)
   - [분석/설계](#분석설계)
@@ -517,7 +517,7 @@ server:
 ### 빌드/배포
 각 프로젝트 jar를 Dockerfile을 통해 Docker Image 만들어 ECR저장소에 올린다.   
 EKS 클러스터에 접속한 뒤, 각 서비스의 deployment.yaml, service.yaml을 kuectl명령어로 서비스를 배포한다.   
-  - 코드 형상관리 : https://github.com/llyyjj99/PurifierRentalPJT 하위 repository에 각각 구성   
+  - 코드 형상관리 : https://github.com/bus2431/AirpurifierRental 하위 repository에 각각 구성   
   - 운영 플랫폼 : AWS의 EKS(Elastic Kubernetes Service)   
   - Docker Image 저장소 : AWS의 ECR(Elastic Container Registry)
 ##### 배포 명령어
