@@ -1,0 +1,74 @@
+server:
+  port: 8088
+
+---
+
+spring:
+  profiles: default
+  cloud:
+    gateway:
+      routes:
+        - id: order
+          uri: http://localhost:8081
+          predicates:
+            - Path=/order/**,/orders/**,/orderStatuses/**
+        - id: assignment
+          uri: http://localhost:8082
+          predicates:
+            - Path=/assignments/**,/assignment/**  
+        - id: installation
+          uri: http://localhost:8083
+          predicates:
+            - Path=/installations/**,/installation/**
+        - id: management
+          uri: http://localhost:8084
+          predicates:
+            - Path=/managements/**,/management/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    gateway:
+      routes:
+        - id: order
+          uri: http://order:8080
+          predicates:
+            - Path=/order/**,/orders/**,/orderStatuses/**
+        - id: assignment
+          uri: http://assignment:8080
+          predicates:
+            - Path=/assignment/**,/assignments/** 
+        - id: installation
+          uri: http://installation:8080
+          predicates:
+            - Path=/installation/**,/installations/**
+        - id: management
+          uri: http://management:8080
+          predicates:
+            - Path=/management/**,/managements/** 
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+server:
+  port: 8080
